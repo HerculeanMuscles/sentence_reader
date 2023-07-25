@@ -1,0 +1,31 @@
+ALGORITHM sentence_reader
+VAR
+    sentence: STRING;
+    letter_count: INTEGER;
+    word_count: INTEGER;
+    vowel_count: INTEGER;
+    letter: CHAR;
+    iteration: INTEGER;
+    vowel: array of STRING;
+BEGIN
+    Read(sentence);
+    iteration := 1;
+    letter_count := 0;
+    word_count := 0;
+    vowel_count := 0;
+    vowel = ['a', 'e', 'i', 'o', 'u']
+    WHILE (iteration <= Length(sentence)) DO
+        letter:= sentence[iteration]
+        letter_count:= letter_count + 1;
+        IF (letter:= ' ') THEN
+            word_count:= word_count +1;
+        ELSE_IF (letter:= vowel) THEN
+            vowel_count:= vowel_count + 1    
+        END_IF
+    
+    END WHILE
+    output('Letter Count: ', letter_count);
+    output('Word Count: ' , word_count);
+    output('Vowel Count: ' , vowel_count);
+
+END
